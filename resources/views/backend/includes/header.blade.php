@@ -3,7 +3,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="#">
-        <img class="navbar-brand-full" src="{{ asset('img/backend/logo/logo.png') }}" height="50" alt="Frutata Logo">
+        <img class="navbar-brand-full" src="{{ asset('img/backend/logo/atom.png') }}" height="50" alt="Frutata Logo">
 {{--        <img class="navbar-brand-minimized" src="{{ asset('img/backend/brand/sygnet.svg') }}" width="30" height="30" alt="CoreUI Logo">--}}
     </a>
     <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">

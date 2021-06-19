@@ -138,11 +138,3 @@
     </div><!--card-->
     {{ Form::close() }}
 @endsection
-
-@section('pagescript')
-    <script type="text/javascript">
-        tinymce.init({
-            selector: '.tinyText'
-        });
-    </script>
-@endsection

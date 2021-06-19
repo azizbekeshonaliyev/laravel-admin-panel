@@ -24,9 +24,9 @@ mix.setPublicPath('public')
         'resources/js/backend/app.js',
         'resources/js/backend/after.js'
     ], 'js/backend.js')
-    /* .scripts([
-        "public/js/backend/admin.js"
-    ], 'public/js/backend-custom.js')    */
+    //  .scripts([
+    //     "public/js/backend/admin.js"
+    // ], 'public/js/backend-custom.js')
     // .copyDirectory('node_modules/tinymce/plugins', 'public/js/plugins')
     // .copyDirectory('node_modules/tinymce/skins', 'public/js/skins')
     // .copyDirectory('node_modules/tinymce/themes', 'public/js/themes')
@@ -44,8 +44,7 @@ mix.setPublicPath('public')
         'moment',
         'moment-timezone',
         'eonasdan-bootstrap-datetimepicker-bootstrap4beta',
-        'select2',
-        'tinymce'
+        'select2'
     ])
     .sourceMaps();
 

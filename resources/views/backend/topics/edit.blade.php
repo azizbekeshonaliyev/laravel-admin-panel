@@ -141,12 +141,3 @@
         </div><!--card-->
     </form>
 @endsection
-
-
-@section('pagescript')
-    <script type="text/javascript">
-        tinymce.init({
-            selector: '.tinyText'
-        });
-    </script>
-@endsection

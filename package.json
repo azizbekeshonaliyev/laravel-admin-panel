@@ -69,7 +69,6 @@
         "eonasdan-bootstrap-datetimepicker-bootstrap4beta": "^4.17.47-a",
         "eonasdan-custom-bootstrap-datetimepicker-with-bootstrap-4": "^1.0.0",
         "jstree": "^3.3.10",
-        "select2": "^4.0.13",
-        "tinymce": "^5.4.0"
+        "select2": "^4.0.13"
     }
 }

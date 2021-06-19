@@ -233,8 +233,5 @@
                 }
             }
         });
-        tinymce.init({
-            selector: '.tinyText'
-        });
     </script>
 @endsection

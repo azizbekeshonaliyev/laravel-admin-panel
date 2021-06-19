@@ -92,8 +92,8 @@
     @stack('before-scripts')
     {!! script(mix('js/manifest.js')) !!}
     {!! script(mix('js/vendor.js')) !!}
-    {!! script(mix('js/backend.js')) !!}
     <script src="{{ asset('/js/tinymce/tinymce.min.js')}}"></script>
+    {!! script(mix('js/backend.js')) !!}
     {!! script(asset('js/backend/common.js')) !!}
 
     @isset($js)

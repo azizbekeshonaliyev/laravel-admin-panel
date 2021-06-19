@@ -3,6 +3,6 @@ import Vue from 'vue';
 
 window.Vue = Vue;
 
-import '@coreui/coreui'
+import "./terms"
 
-$(".select2-term").select2()
+import '@coreui/coreui'
