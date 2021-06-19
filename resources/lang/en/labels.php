@@ -113,6 +113,7 @@ return [
                             'last_name' => 'Last Name',
                             'status' => 'Status',
                             'timezone' => 'Timezone',
+                            'username' => 'Username',
                         ],
                     ],
                 ],

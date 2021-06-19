@@ -184,6 +184,7 @@ return [
                     'send_confirmation_email' => 'Send Confirmation E-mail',
                     'timezone' => 'Timezone',
                     'language' => 'Language',
+                    'username' => 'Username',
                 ],
 
                 'faqs' => [

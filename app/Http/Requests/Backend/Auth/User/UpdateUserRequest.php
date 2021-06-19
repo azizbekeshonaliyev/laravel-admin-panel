@@ -29,7 +29,8 @@ class UpdateUserRequest extends FormRequest
         return [
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users,email,'.$this->segment(4),
+            'username' => 'required|string|max:255|unique:users,username,'.$this->segment(4),
+            'email' => 'nullable|email|max:255|unique:users,email,'.$this->segment(4),
             'assignees_roles' => 'required',
             'permissions' => 'required',
         ];

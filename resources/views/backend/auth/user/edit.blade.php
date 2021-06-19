@@ -50,7 +50,17 @@
                     {{ Form::label('email', __('validation.attributes.backend.access.users.email'), [ 'class'=>'col-md-2 form-control-label']) }}
 
                     <div class="col-md-10">
-                        {{ Form::text('email', null, ['class' => 'form-control', 'placeholder' => trans('validation.attributes.backend.access.users.email'), 'required' => 'required']) }}
+                        {{ Form::text('email', null, ['class' => 'form-control', 'placeholder' => trans('validation.attributes.backend.access.users.email')]) }}
+                    </div>
+                    <!--col-->
+                </div>
+                <!--form-group-->
+
+                <div class="form-group row">
+                    {{ Form::label('username', __('validation.attributes.backend.access.users.username'), [ 'class'=>'col-md-2 form-control-label']) }}
+
+                    <div class="col-md-10">
+                        {{ Form::text('username', null, ['class' => 'form-control', 'placeholder' => trans('validation.attributes.backend.access.users.username'), 'required' => 'required']) }}
                     </div>
                     <!--col-->
                 </div>

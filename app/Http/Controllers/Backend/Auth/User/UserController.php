@@ -68,13 +68,6 @@ class UserController extends Controller
         return redirect()->route('admin.auth.user.index')->withFlashSuccess(__('alerts.backend.access.users.updated'));
     }
 
-    /**
-     * @param \App\Http\Requests\Backend\Auth\User\ManageUserRequest $request
-     * @param \App\Models\Auth\User $user
-     *
-     * @throws \Exception
-     * @return mixed
-     */
     public function destroy(ManageUserRequest $request, User $user)
     {
         $this->userRepository->delete($user);

@@ -85,7 +85,7 @@
                                 <div class="form-group row">
                                     <label for="catalog_category_id" class="col-sm-2 col-form-label">@lang('validation.attributes.backend.access.products.category')</label>
                                     <div class="col-md-10">
-                                        <select name="catalog_category_id" class="form-control box-size select2" id="catalog_category_id">
+                                        <select name="catalog_category_id" class="form-control box-size select2-term" style="width: 100%" id="catalog_category_id">
                                             <option value="">Select</option>
                                             @foreach($categories as $item)
                                                 <option value="{{ $item->id }}" @if($product->category_id == $item->id) selected @endif>{{ $item->name }}</option>

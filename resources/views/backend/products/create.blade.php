@@ -64,14 +64,14 @@
                                         <div class="form-group row">
                                             <label for="meta_description{{$language->locale}}" class="col-sm-2 col-form-label">@lang('validation.attributes.backend.access.products.meta_description')</label>
                                             <div class="col-md-10">
-                                                <textarea name="translations[{{$language->locale}}][meta_description]" id="desc_{{$language->locale}}" rows="6" class="form-control" placeholder="@lang('validation.attributes.backend.access.products.meta_description')"></textarea>
+                                                <textarea name="translations[{{$language->locale}}][meta_description]" id="meta_description{{$language->locale}}" rows="6" class="form-control" placeholder="@lang('validation.attributes.backend.access.products.meta_description')"></textarea>
                                             </div><!--col-->
                                         </div><!--form-group-->
 
                                         <div class="form-group row">
                                             <label for="meta_keywords{{$language->locale}}" class="col-sm-2 col-form-label">@lang('validation.attributes.backend.access.products.meta_keywords')</label>
                                             <div class="col-md-10">
-                                                <textarea name="translations[{{$language->locale}}][meta_keywords]" id="desc_{{$language->locale}}" rows="6" class="form-control" placeholder="@lang('validation.attributes.backend.access.products.meta_keywords')"></textarea>
+                                                <textarea name="translations[{{$language->locale}}][meta_keywords]" id="meta_keywords{{$language->locale}}" rows="6" class="form-control" placeholder="@lang('validation.attributes.backend.access.products.meta_keywords')"></textarea>
                                             </div><!--col-->
                                         </div><!--form-group-->
                                     </div>
@@ -82,7 +82,7 @@
                             <div class="form-group row">
                                 <label for="catalog_category_id" class="col-sm-2 col-form-label">@lang('validation.attributes.backend.access.products.category')</label>
                                 <div class="col-md-10">
-                                    <select name="catalog_category_id" class="form-control box-size select2" id="catalog_category_id">
+                                    <select name="catalog_category_id" class="form-control box-size select2-term" style="width: 100%" id="catalog_category_id">
                                         <option value="">Select</option>
                                         @foreach($categories as $item)
                                             <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -209,8 +209,51 @@
             }
         });
 
+
         tinymce.init({
-            selector: '.tinyText'
+            selector: '.tinyText',
+              file_picker_types: 'image',
+                          automatic_uploads: true,
+                        plugins: "advlist autolink lists link image charmap print preview anchor",
+                        toolbar: 'undo redo | styleselect | forecolor | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | link image | code',
+
+                         file_picker_callback: function (cb, value, meta) {
+                var input = document.createElement('input');
+                input.setAttribute('type', 'file');
+                input.setAttribute('accept', 'image/*');
+
+                /*
+                  Note: In modern browsers input[type="file"] is functional without
+                  even adding it to the DOM, but that might not be the case in some older
+                  or quirky browsers like IE, so you might want to add it to the DOM
+                  just in case, and visually hide it. And do not forget do remove it
+                  once you do not need it anymore.
+                */
+
+                input.onchange = function () {
+                  var file = this.files[0];
+
+                  var reader = new FileReader();
+                  reader.onload = function () {
+                    /*
+                      Note: Now we need to register the blob in TinyMCEs image blob
+                      registry. In the next release this part hopefully won't be
+                      necessary, as we are looking to handle it internally.
+                    */
+                    var id = 'blobid' + (new Date()).getTime();
+                    var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
+                    var base64 = reader.result.split(',')[1];
+                    var blobInfo = blobCache.create(id, file, base64);
+                    blobCache.add(blobInfo);
+
+                    /* call the callback and populate the Title field with the file name */
+                    cb(blobInfo.blobUri(), { title: file.name });
+                  };
+                  reader.readAsDataURL(file);
+                };
+
+                input.click();
+              },
         });
     </script>
 @endsection

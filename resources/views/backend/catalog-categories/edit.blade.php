@@ -74,7 +74,7 @@
                                 <div class="form-group row">
                                     <label for="parent_id" class="col-sm-2 col-form-label">@lang('validation.attributes.backend.access.catalog-categories.parent')</label>
                                     <div class="col-md-10">
-                                        <select name="parent_id" class="form-control box-size select2" id="parent_id">
+                                        <select name="parent_id" class="form-control box-size select2-term" style="width: 100%" id="parent_id">
                                             <option value="">Select</option>
                                             @foreach($categories as $item)
                                                 <option value="{{ $item->id }}" @if($category->parent_id == $item->id) selected @endif>{{ $item->name }}</option>

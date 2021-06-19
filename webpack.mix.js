@@ -45,7 +45,7 @@ mix.setPublicPath('public')
         'moment-timezone',
         'eonasdan-bootstrap-datetimepicker-bootstrap4beta',
         'select2',
-        // 'tinymce'
+        'tinymce'
     ])
     .sourceMaps();
 
