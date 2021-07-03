@@ -20,6 +20,7 @@
     <!-- Check if the language is set to RTL, so apply the RTL layouts -->
     <!-- Otherwise apply the normal LTR layouts -->
     {{ style(mix('css/backend.css')) }}
+{{--    <link rel="stylesheet" href="{{ asset('vendor/file-manager/css/file-manager.css') }}">--}}
 
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
 
@@ -95,6 +96,7 @@
     <script src="{{ asset('/js/tinymce/tinymce.min.js')}}"></script>
     {!! script(mix('js/backend.js')) !!}
     {!! script(asset('js/backend/common.js')) !!}
+{{--    <script src="{{ asset('vendor/file-manager/js/file-manager.js') }}"></script>--}}
 
     @isset($js)
     @foreach($js as $j)

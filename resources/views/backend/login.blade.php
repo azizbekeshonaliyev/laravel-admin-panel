@@ -31,7 +31,7 @@
 
     <div class="app-body">
         <main class="main">
-            <div class="container-fluid">
+            <div class="container-fluid w-25">
                 <div class="animated fadeIn">
                     @include('includes.partials.messages')
 

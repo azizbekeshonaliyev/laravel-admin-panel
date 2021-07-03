@@ -47,6 +47,30 @@ tinymce.init({
 });
 
 /**
+ *
+ *
+
+ file manager settings
+ file_browser_callback: function(field_name, url, type, win) {
+        tinyMCE.activeEditor.windowManager.open({
+            file: '/file-manager/tinymce',
+            title: 'Laravel File Manager',
+            width: window.innerWidth * 0.8,
+            height: window.innerHeight * 0.8,
+            resizable: 'yes',
+            close_previous: 'no',
+        }, {
+            setUrl: function(url) {
+                win.document.getElementById(field_name).value = url;
+            },
+        });
+    },
+
+
+ *
+ */
+
+/**
  * Select init
  */
 $(".select2-term").select2()

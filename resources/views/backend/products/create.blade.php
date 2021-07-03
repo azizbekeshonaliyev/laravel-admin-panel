@@ -185,6 +185,9 @@
                 </div><!--col-->
             </div><!--row-->
         </div><!--card-body-->
+{{--        <div style="height: 600px;">--}}
+{{--            <div id="fm"></div>--}}
+{{--        </div>--}}
         @include('backend.components.footer-buttons', [ 'cancelRoute' => 'admin.products.index' ])
     </div><!--card-->
     {{ Form::close() }}
